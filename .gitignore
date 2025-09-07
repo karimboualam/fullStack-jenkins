@@ -1,0 +1,41 @@
+# ======================================
+# Global Gitignore pour projet Java + Angular
+# ======================================
+
+# ---- Node / Angular ----
+jenkins-angular/node_modules/
+jenkins-angular/dist/
+jenkins-angular/.angular/
+jenkins-angular/.vscode/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# ---- Logs ----
+*.log
+
+# ---- IDE / OS ----
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+*.swp
+
+# ---- Java / Maven ----
+jenkins/target/
+*.class
+*.jar
+*.war
+*.ear
+
+# ---- Maven wrapper fichiers binaires ----
+jenkins/.mvn/
+!jenkins/mvnw
+!jenkins/mvnw.cmd
+
+# ---- Tests / Coverage ----
+/coverage
+/test-output
+
+# ---- Environnements locaux ----
+.env
