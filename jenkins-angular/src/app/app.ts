@@ -1,12 +1,22 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { HelloService } from './hello'; // 👈 renomme bien en HelloService
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('jenkins-angular');
+export class AppComponent implements OnInit {
+  message = '';
+
+  constructor(private helloService: HelloService) {}
+
+  ngOnInit(): void {
+    this.helloService.getMessage().subscribe((data: string) => {
+      this.message = data;
+    });
+  }
 }
