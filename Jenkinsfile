@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven "Maven_3.9"   
-        nodejs "Node_18"    
+        nodejs "Node_22"    
     }
 
     stages {
