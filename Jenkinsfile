@@ -16,7 +16,7 @@ pipeline {
         stage('Build Backend - Spring Boot') {
             steps {
                 dir('jenkins') {
-                    sh 'mvn clean package -DskipTests'
+                    bat 'mvn clean package -DskipTests'
                 }
             }
         }
@@ -24,8 +24,8 @@ pipeline {
         stage('Build Frontend - Angular') {
             steps {
                 dir('jenkins-angular') {
-                    sh 'npm install'
-                    sh 'npm run build -- --configuration production'
+                    bat 'npm install'
+                    bat 'npm run build -- --configuration production'
                 }
             }
         }
